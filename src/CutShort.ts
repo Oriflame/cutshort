@@ -66,9 +66,7 @@ class CutShort {
     private _defineOptions(options?: ICutShortOptions): ICutShortDefaultOptions {
         const attributeOptions = this._parseAttibutes();
 
-        if (!options) {
-            options = this._parseOptions(options || {});
-        }
+        options = this._parseOptions(options || {});
 
         return {
             ...CutShort.DEFAULT_OPTIONS,
