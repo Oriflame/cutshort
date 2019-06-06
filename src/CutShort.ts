@@ -108,7 +108,7 @@ class CutShort {
 			try {
 				breakpoints = JSON.parse(this._element.getAttribute(CutShort.ELEMENT_BREAKPOINT_ATTRIBUTE) as string);
 			} catch (error) {
-				throw new Error('Invalid cut-short-breakpoints attribute, please provide valid RWD object');
+				throw new Error('Invalid cut-short-breakpoints attribute, please provide valid breakpoints object: https://github.com/WitoTV/cutshort#breakpoints-key-number-number');
 			}
 		}
 
