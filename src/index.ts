@@ -1,10 +1,11 @@
-import {CutShort, ICutShortElement, ICutShortOptions} from './CutShort';
+import {CutShort, ICutShortElement, ICutShortOptions, ICutShortOptionsBreakpoints} from './CutShort';
 import {CutShortFactory, ICutShortFactory} from './CutShortFactory';
 
 export {
-	CutShort,
-	ICutShortElement,
-	ICutShortOptions,
-	CutShortFactory,
-	ICutShortFactory
+    CutShort,
+    ICutShortElement,
+    ICutShortOptions,
+    ICutShortOptionsBreakpoints,
+    CutShortFactory,
+    ICutShortFactory
 }

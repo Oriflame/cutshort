@@ -93,10 +93,10 @@ Allows to set different amount of displayed lines for different responsive break
 
 ```ts
 {
-	// when window width is >= 0px
+    // when window width is >= 0px
     0: lines, // Always added if not supplied
     
-	// when window width is >= 576px
+    // when window width is >= 576px
     578: 2,
     
     // when window width is >= 768px
