@@ -39,7 +39,7 @@ yarn add cutshort
 
 <h2 align="center">Introduction</h2>
 
-CutShort is a libary that makes miltiline oveflow easy.  
+CutShort is a libary that makes multiline oveflow easy.  
 
 If your browser supports [css line-clamp](https://caniuse.com/css-line-clamp), CutShort will automaticly try to fallback into it.
 
