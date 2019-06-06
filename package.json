@@ -1,0 +1,43 @@
+{
+  "name": "cutshort",
+  "version": "1.0.0",
+  "description": "CutShort is a javascript plugin to create multiline overflow ellipsis easy.",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "webpack --mode production",
+    "watch": "webpack --watch --mode development"
+  },
+  "author": "Witold Budzioch <witold.budzioch@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/WitoTV/cutshort",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WitoTV/cutshort.git"
+  },
+  "bugs": "https://github.com/WitoTV/cutshort/issues",
+  "keywords": [
+    "overflow",
+    "ellipsis",
+    "multiline",
+    "text-overflow",
+    "text",
+    "truncating",
+    "truncate",
+    "excerpt",
+    "excerpting",
+    "dots",
+    "typescript"
+  ],
+  "devDependencies": {
+    "@types/lodash-es": "^4.17.3",
+    "clean-webpack-plugin": "^2.0.2",
+    "ts-loader": "^6.0.0",
+    "typescript": "^3.4.5",
+    "webpack": "^4.31.0",
+    "webpack-cli": "^3.3.2"
+  },
+  "dependencies": {
+    "lodash-es": "^4.17.11"
+  }
+}
