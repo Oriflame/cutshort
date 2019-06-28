@@ -145,11 +145,6 @@ class CutShort {
     }
 
     private _createCssStyles(): void {
-        if (this._cssFallback) {
-            this._element.style['-webkit-box-orient'] = 'vertical'; 
-            this._element.style.display = '-webkit-box';
-        }
-
         this._element.style.overflow = 'hidden';
         this._element.style.overflowWrap = 'break-word';
     }
@@ -160,10 +155,6 @@ class CutShort {
         }
 
         return this._debounced;
-    }
-
-    private get _cssFallback(): boolean {
-        return ('-webkit-line-clamp' in document.body.style);
     }
 
     public excerpt = (): void => {
@@ -181,16 +172,11 @@ class CutShort {
 
         let currentBreakpoint = Math.max(...matchingBreakpoints, 0);
 
-        if (!this._cssFallback) {
-            maxHeight = lineHeight * (this._options.breakpoints as ICutShortOptionsBreakpoints)[currentBreakpoint];
+        maxHeight = lineHeight * (this._options.breakpoints as ICutShortOptionsBreakpoints)[currentBreakpoint];
 
-            while (!this._doesFit(maxHeight)) {
-                this._element.textContent = this._element.textContent.replace(/\W*\s(\S)*$/, '…');
-            }
-            return;
+        while (!this._doesFit(maxHeight)) {
+            this._element.textContent = this._element.textContent.replace(/\W*\s(\S)*$/, '…');
         }
-
-        this._element.style['-webkit-line-clamp'] = (this._options.breakpoints as ICutShortOptionsBreakpoints)[currentBreakpoint];
     }
 
     public destroy(): void {
