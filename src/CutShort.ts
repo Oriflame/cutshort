@@ -57,8 +57,7 @@ class CutShort {
         if (element.textContent) {
             this._originalContent = element.textContent;
         }
-        
-        this._createCssStyles();
+
         this.excerpt();
         this._watch();
     }
@@ -142,11 +141,6 @@ class CutShort {
 
     private _unwatch(): void {
         window.removeEventListener(CutShort.CHANGE_EVENT_TYPE, this._debouncedExcerpt);
-    }
-
-    private _createCssStyles(): void {
-        this._element.style.overflow = 'hidden';
-        this._element.style.overflowWrap = 'break-word';
     }
 
     private get _debouncedExcerpt(): TDebounceExcerpt {
