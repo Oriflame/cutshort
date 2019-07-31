@@ -24,18 +24,25 @@ class CutShortFactory implements ICutShortFactory {
     }
 
     private _watch(selector: string): void {
-        const observer = new MutationObserver((mutationsList: MutationRecord[]) => {
+        const observer = new MutationObserver((mutationsList: MutationRecord[]): void => {
             mutationsList.map((mutationList: MutationRecord) => {
 
                 //Added nodes
-                mutationList.addedNodes.forEach((node: ICutShortElement) => {
-                    if (node.nodeType === Node.ELEMENT_NODE && node.matches(selector)) {
-                        this._create(node);
+                mutationList.addedNodes.forEach((node: ICutShortElement): void => {
+                    if (node.nodeType === Node.ELEMENT_NODE) {
+                        if (node.matches(selector)) {
+                            this._create(node);
+                            return;
+                        }
+
+                        node.querySelectorAll(selector).forEach((element: ICutShortElement): void => {
+                            this._create(element)
+                        });
                     };
                 });
 
                 //Removed nodes
-                mutationList.removedNodes.forEach((node: ICutShortElement) => {
+                mutationList.removedNodes.forEach((node: ICutShortElement): void => {
                     if (
                         node.nodeType === Node.ELEMENT_NODE &&
                         node.matches(selector) &&
