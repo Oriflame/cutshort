@@ -1,6 +1,6 @@
 {
   "name": "cutshort",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "CutShort is a javascript plugin to create multiline overflow ellipsis easy.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
